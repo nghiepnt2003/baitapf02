@@ -4,8 +4,11 @@ import 'package:baitapf02/Screen/login_screen.dart';
 import 'package:baitapf02/Screen/manager_screen.dart';
 import 'package:baitapf02/Screen/register_screen.dart';
 import 'package:baitapf02/Screen/reset_password_screen.dart';
+import 'package:baitapf02/Screen/category_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 void main() async {
   await dotenv.load(fileName: ".env");
   runApp(MyApp());
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(),  // Assuming you have a LoginScreen
+        '/': (context) => LoginScreen(), // Assuming you have a LoginScreen
         '/manager': (context) => ManagerScreen(),
         '/register': (context) => RegisterScreen(),
         // '/otp': (context) {
@@ -36,6 +39,7 @@ class MyApp extends StatelessWidget {
         //     },
         '/forget-password': (context) => ForgotPasswordScreen(),
         '/reset-password': (context) => ResetPasswordScreen(),
+        '/category': (context) => CategoryScreen(),
       },
     );
   }

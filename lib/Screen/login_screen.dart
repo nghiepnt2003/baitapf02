@@ -45,7 +45,13 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Login successful")),
         );
-        Navigator.pushReplacementNamed(context, "/manager");
+        // Navigator.pushReplacementNamed(context, "/manager");
+        // Truyền dữ liệu userData vào ManagerScreen
+        Navigator.pushReplacementNamed(
+          context,
+          "/manager",
+          arguments: data["userData"], // Truyền toàn bộ userData
+        );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(data["message"] ?? "Login failed")),
